@@ -1,0 +1,17 @@
+makeCacheMatrix<- function(x = matrix()) {
+        set <- function(f) {
+
+## to create a Matrix M and a variable inverse 
+## set that matrix M
+
+		  M<<-f 
+                  }
+
+        get <- function() x  ##call cachesolve( makeCacheMatrix(M) )
+        setinv <- function(a) inverse <<- a
+        getinv <- function() inverse
+	  
+        list(set = set, get = get,
+             setinv = setinv,
+             getinv = getinv)
+}
