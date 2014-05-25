@@ -1,0 +1,28 @@
+cacheSolve <- function(x, ...) {
+	
+## the inverse we calculated 	
+
+	inverse <- x$getinv()  ## gets the inverse already calculated
+
+## Matrix value 
+	data <- x$get()        ## gets the matrix passed as argment
+
+## The inverse should not be NULL if so  the Matrix passed 
+## matrix available in environment are identical
+
+
+	if(!is.null(inverse) & identical(data,M)) {
+         message("getting cached data")
+                return(inverse)
+        }
+
+
+## If the Matrix is not available and also inverse ,
+## the inverse to be calculated again , The M and gloabal set 
+
+
+        inverse <- solve(data)
+        x$setinv(inverse)
+        x$set(data)
+        inverse
+}
